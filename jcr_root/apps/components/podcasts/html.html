@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head data-sly-include="${'/apps/components/header.html'}"></head>
+	<body>
+		<h1>${ properties.jcr:title }</h1>
+		<p>${ properties.jcr:description }</p>
+		<div class="list-group" data-sly-list="${ resource.listChildren }">
+			<a href="${ item.name @ prependPath='podcasts/', addSelectors=['html'] }" class="list-group-item">
+				<h4 class="list-group-item-heading">${ item.jcr:title }</h4>
+				<p class="list-group-item-text">${ item.jcr:description }</p>
+			</a>
+		</div>
+	</body>
+</html>
